@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vue Instance</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</head>
+
+<body>
+
+    <div id="app">
+      <p>{{ foo }}</p>
+      <!-- this will no longer update `foo`! -->
+      <button v-on:click="foo = 'baz'">Change it</button>
+    </div>
+
+    <script>
+      var obj = {
+        foo: 'bar'
+      }
+
+      //Object.freeze(obj)
+
+      new Vue({
+        el: '#app',
+        data: obj
+      })
+    </script>
+      
+
+</body>
+</html>
