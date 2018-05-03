@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example 4</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</head>
+
+<body>
+
+  <div id="blog-post-demo">
+    <ol>
+      <blog-post
+        v-for="post in posts"
+        v-bind:post="post">
+      </blog-post>
+    </ol>
+  </div>
+
+    <script>
+
+      Vue.component('blog-post', {
+        props: ['post'],
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+        template: `<div class="blog-post">
+          <h3>{{ post.title }}</h3>
+          <div v-html="post.title"></div>
+        </div>`
+      })
+
+    new Vue({
+      el: '#blog-post-demo',
+      data: {
+        posts: [
+          { id: 1, title: 'My journey with Vue' },
+          { id: 3, title: 'Blogging with Vue' },
+          { id: 2, title: 'Why Vue is so fun' },
+        ]
+      }
+    })
+    </script>
+      
+
+</body>
+</html>

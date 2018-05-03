@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example 1</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</head>
+
+<body>
+
+    <div id="components-demo">
+      <blog-post title="My journey with Vue"></blog-post>
+      <blog-post title="Blogging with Vue"></blog-post>
+      <blog-post title="Why Vue is so fun"></blog-post>
+    </div>
+
+    <script>
+      // Define a new component called button-counter
+      Vue.component('blog-post', {
+        props: ['title'],
+        template: '<h3>{{ title }}</h3>'
+      })
+
+      new Vue({ el: '#components-demo' })
+
+    </script>
+      
+
+</body>
+</html>
