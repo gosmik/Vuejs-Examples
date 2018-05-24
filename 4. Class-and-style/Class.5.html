@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vue Instance</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</head>
+
+<body>
+
+    <div id="app">
+      <div v-bind:class="[{ active: isActive }, errorClass]">
+          Object Syntax in Array Syntax
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          isActive: true,
+          errorClass: 'text-danger'
+        }
+      });
+    </script>
+      
+
+</body>
+</html>

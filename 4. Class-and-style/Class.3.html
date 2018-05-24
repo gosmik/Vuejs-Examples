@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vue Instance</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-bind:class="classObject">
+          computed cache the data, it only compute 
+        </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          isActive: true,
+          error: null
+        },
+        computed: {
+          classObject: function () {
+            return {
+              active: this.isActive && !this.error,
+              'text-danger': this.error && this.error.type === 'fatal'
+            }
+          }
+        }
+      });
+    </script>
+      
+
+</body>
+</html>

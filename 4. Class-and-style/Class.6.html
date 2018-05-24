@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vue Instance</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</head>
+
+<body>
+
+    <div id="app">
+      <my-component class="baz boo"> 
+        When you use the class attribute on a custom component, those classes will be added to the component’s root element
+        <br>
+      </my-component>
+
+      <my-component v-bind:class="{ active: isActive }">
+        By using class bindings <br>
+      </my-component>
+      
+    </div>
+
+    <script>
+      Vue.component('my-component', {
+        template: '<p class="foo bar">Hi</p> <br>'
+      })
+    </script>
+      
+
+</body>
+</html>
